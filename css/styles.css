@@ -1,0 +1,232 @@
+:root {
+  /* Light Mode Colors */
+  --primary-purple: #6a0dad;
+  --light-purple: #f3e5ff;
+  --lighter-purple: #f8e7ff;
+  --text-color: black;
+  --button-bg: #6a0dad;
+  --button-text: white;
+  --button-hover-bg: #4b0082;
+  --button-hover-shadow: 2px 2px 30px #6a0dad;
+  --nav-link-color: white;
+  --nav-link-hover: #dda0dd;
+}
+
+/* Dark Mode Override */
+.dark-mode {
+  --primary-purple: #3d0066;
+  --light-purple: #1e002e;
+  --lighter-purple: #2b0040;
+  --text-color: white;
+  --button-bg: #a020f0;
+  --button-text: black;
+  --button-hover-bg: #bf40bf;
+  --button-hover-shadow: 2px 2px 30px #a020f0;
+  --nav-link-color: #ffffff;
+  --nav-link-hover: #ffb3ff;
+}
+
+/* Page Background and Text */
+body {
+  background-color: var(--light-purple);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+  z-index: 4;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: var(--primary-purple);
+  backdrop-filter: brightness(100%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-container .logo img {
+  width: 140px;
+  height: 50px;
+}
+
+.nav-container .links a {
+  font-size: 1.3rem;
+  color: var(--nav-link-color);
+  text-decoration: none;
+  margin: 0 20px;
+  transition: 0.3s linear;
+}
+
+.nav-container .links a:hover {
+  color: var(--nav-link-hover);
+  text-shadow: 1px 1px var(--nav-link-hover);
+}
+
+nav button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  transition: 0.3s linear;
+  box-shadow: 1px 1px 10px var(--button-bg);
+}
+
+nav button:hover {
+  background-color: var(--button-text);
+  color: var(--button-bg);
+  border: 2px solid var(--button-bg);
+}
+
+nav svg {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+nav .dropmenu {
+  position: absolute;
+  top: 0;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  transform: translateY(-300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-purple);
+  transition: 0.3s linear;
+}
+
+.dropmenu a {
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+  color: var(--nav-link-color);
+  padding: 10px 0;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+
+.dropmenu a:hover {
+  background-color: var(--nav-link-color);
+  color: var(--primary-purple);
+}
+
+.dropmenu button {
+  width: 100%;
+  height: 45px;
+}
+
+/* Intro Section */
+section.content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 60px 0;
+  background-color: var(--light-purple);
+}
+
+.main-content h1,
+.main-content span {
+  color: var(--primary-purple);
+}
+
+.main-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+.main-content p {
+  font-size: clamp(1rem, 1rem + 5vw, 1.2rem);
+  color: var(--text-color);
+}
+
+.main-content .buttons {
+  width: 70%;
+  margin: 5% 0;
+  min-height: 5.5vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-content .buttons button {
+  width: 160px;
+  margin: 0 10px;
+  border-radius: 20px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s linear;
+}
+
+.buttons button:hover {
+  background: var(--button-hover-bg);
+  box-shadow: var(--button-hover-shadow);
+}
+
+.content .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Project Cards */
+.project-card {
+  width: 18rem;
+}
+
+.project-card .card-body {
+  background-color: var(--lighter-purple);
+  color: var(--text-color);
+}
+
+.project-btn {
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.project-btn:hover {
+  background-color: var(--button-text);
+  color: var(--button-bg);
+  border: 2px solid var(--button-bg);
+}
+
+/* Printing override */
+@media print {
+  #teal-job-tracker-root-stable,
+  #teal-job-tracker-companion-root-stable {
+    display: none !important;
+  }
+}
+
+iframe#teal-job-tracker-iframe-stable {
+  min-width: 380px !important;
+  width: 380px !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+}
